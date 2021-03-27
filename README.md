@@ -1,2 +1,3 @@
-# Calculator-tkinter-version-
-Scientific Calculator made with tkinter 
+# Calculator-tkinter-version
+
+Simple DMAS calculator made with Tkinter.
