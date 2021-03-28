@@ -10,7 +10,6 @@ def buttonClick(number):
     current = entry.get()
     entry.delete(0, END)
     entry.insert(0, str(current) + str(number))
-    
 
 def buttonClear():
     entry.delete(0, END)
@@ -47,6 +46,14 @@ def buttonDivide():
     math = "division"
     entry.delete(0, END)
 
+def buttonExponent():
+    firstNumber = entry.get()
+    global f_num
+    global math
+    f_num = int(firstNumber)
+    math = "exponent"
+    entry.delete(0, END)
+
 def buttonEqual():
     secondNumber = entry.get()
     entry.delete(0, END)
@@ -58,6 +65,8 @@ def buttonEqual():
         entry.insert(0, f_num * int(secondNumber))
     elif math == "division": 
         entry.insert(0, f_num / int(secondNumber))
+    elif math == "exponent":
+        entry.insert(0, f_num ^ int(secondNumber))
 
 entry = Entry(root, width=50, borderwidth=4)
 entry.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
@@ -79,6 +88,7 @@ button_multiply = Button(root, text='*', padx=40, pady=20, command=buttonMultipl
 button_divide = Button(root, text='/', padx=40, pady=20, command=buttonDivide)
 button_equal = Button(root, text='=', padx=40, pady=20, command=buttonEqual)
 button_clear = Button(root, text='clear', padx=100, pady=20, command=buttonClear)
+button_exponent = Button(root, text='^', padx=40, pady=20, command=buttonExponent)
 
 button0.grid(row=4, column=1)
 
@@ -100,5 +110,6 @@ button_multiply.grid(row=5, column=0)
 button_divide.grid(row=5, column=2)
 button_equal.grid(row=5, column=1)
 button_clear.grid(row=6, column=0, columnspan=3)
+button_exponent.grid(row=6, column=1)
 
 root.mainloop()
