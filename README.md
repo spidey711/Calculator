@@ -1,3 +1,3 @@
 # Calculator-tkinter-version
 
-Simple DMAS calculator made with Tkinter.
+Simple calculator made with Tkinter.
